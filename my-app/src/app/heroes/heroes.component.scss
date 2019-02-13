@@ -1,0 +1,17 @@
+.hero-template {
+  width: 100%;
+  text-align: left;
+  ul.hero-info {
+    li {
+      line-height: 24px;
+    }
+  }
+  button.toggleFormat {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #336699;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+  }
+}

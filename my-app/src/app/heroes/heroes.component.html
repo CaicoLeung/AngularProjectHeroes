@@ -1,0 +1,9 @@
+<div class="hero-template">
+  <h2>{{hero.name | uppercase}} 详情</h2>
+  <ul class="hero-info">
+    <li><span>id: </span>{{hero.id}}</li>
+    <li><span>name: </span>{{hero.name}}</li>
+    <li><span>birthday: </span>{{hero.birthday | date: format}}</li>
+  </ul>
+  <button class="toggleFormat" (click)="toggleFormat()">点击切换格式</button>
+</div>
