@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../Hero';
+import { HEROES } from '../mock-heroes';
 
 @Component({
   selector: 'app-heroes',
@@ -13,6 +14,10 @@ export class HeroesComponent implements OnInit {
     birthday: new Date(1993, 5, 1)
   };
 
+  selectedHero: Hero;
+
+  heroes = HEROES;
+
   isToggle = true;
 
   get format() {
@@ -21,6 +26,10 @@ export class HeroesComponent implements OnInit {
 
   toggleFormat() {
     this.isToggle = !this.isToggle;
+  }
+
+  onSelect(hero: Hero):void {
+    this.selectedHero = hero;
   }
 
   constructor() { }

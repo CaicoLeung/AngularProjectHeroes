@@ -1,9 +1,16 @@
 <div class="hero-template">
-  <h2>{{hero.name | uppercase}} 详情</h2>
+  <div class="details" *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}}的详情</h2>
+    <div><span>id: </span>{{selectedHero.id}}</div>
+    <div><span>birthday: </span>{{selectedHero.birthday | date: format}}</div>
+    <div>
+      <label>name:<input type="text" placeholder="name" [(ngModel)]="selectedHero.name"></label>
+    </div>
+  </div>
   <ul class="hero-info">
-    <li><span>id: </span>{{hero.id}}</li>
-    <li><span>name: </span>{{hero.name}}</li>
-    <li><span>birthday: </span>{{hero.birthday | date: format}}</li>
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.active]="hero === selectedHero">
+      <span class="badge">{{hero.id}}</span><i>{{hero.name}}</i>
+    </li>
   </ul>
   <button class="toggleFormat" (click)="toggleFormat()">点击切换格式</button>
 </div>
