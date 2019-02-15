@@ -1,0 +1,8 @@
+<div class="details" *ngIf="hero">
+  <h2>{{hero.name | uppercase}}的详情</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div><span>birthday: </span>{{hero.birthday | date: format}}</div>
+  <div>
+    <label>name:<input type="text" placeholder="name" [(ngModel)]="hero.name"></label>
+  </div>
+</div>

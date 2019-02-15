@@ -1,12 +1,5 @@
 <div class="hero-template">
-  <div class="details" *ngIf="selectedHero">
-    <h2>{{selectedHero.name | uppercase}}的详情</h2>
-    <div><span>id: </span>{{selectedHero.id}}</div>
-    <div><span>birthday: </span>{{selectedHero.birthday | date: format}}</div>
-    <div>
-      <label>name:<input type="text" placeholder="name" [(ngModel)]="selectedHero.name"></label>
-    </div>
-  </div>
+  <app-hero-detail [hero]="selectedHero" [isToggle]="isToggle"></app-hero-detail>
   <ul class="hero-info">
     <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.active]="hero === selectedHero">
       <span class="badge">{{hero.id}}</span><i>{{hero.name}}</i>
