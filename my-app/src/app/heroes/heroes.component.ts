@@ -16,21 +16,9 @@ export class HeroesComponent implements OnInit {
     birthday: new Date(1993, 5, 1)
   };
 
-  selectedHero: Hero;
-
   heroes: Hero[];
 
-  isToggle = true;
-
   constructor(private heroService: HeroService) { }
-
-  toggleFormat() {
-    this.isToggle = !this.isToggle;
-  }
-
-  onSelect(hero: Hero):void {
-    this.selectedHero = hero;
-  }
 
   getHeroes(): void{
     this.heroService.getHeroes().subscribe(heroes => {
